@@ -29,12 +29,12 @@
                             <th>Tiempo Real de Aterrizaje</th>
                         </tr>
                         <div class="detalleUsuario"></div>
-                        @for(avion <- listaAviones){
+                        @for(avioncito <- listaAviones){
                         <tr>
                             <th>
-                                <button class="holi "id="myBtn" onclick="detalle(@avion.id)">Avion: @avion.nombre</button>
+                                <button class="holi "id="myBtn" onclick="avion(@avioncito.id)">Avion: @avioncito.nombre</button>
                             </th>
-                            <th>@avion.tiempoAterrizajeReal</th>
+                            <th>@avioncito.tiempoAterrizajeReal</th>
                         </tr>
                     }
                     </table>

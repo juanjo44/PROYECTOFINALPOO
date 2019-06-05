@@ -23,7 +23,7 @@ class archivos{
 
     def leerArchivoTexto( nombre : String ) : (Int, List[Avion], Int) = {
         var avionTemp : Avion = new Avion
-        var numeroAviones = 0
+        var numeroAviones = 9999
         var tiempoCongelamiento = 0
         var aviones : List[Avion] = Nil
         var primero : Boolean = true
@@ -32,38 +32,42 @@ class archivos{
         var listaNumeros : List[Int] = Nil
         var lines = Source.fromFile(nombre)
         var contador = 0
+        var contadorAviones = 0
         lines.getLines().foreach{
         e =>
-            listaLinea = tomarNumeros(e)
-            if(primero){
-            numeroAviones = listaLinea._1(1)
-            tiempoCongelamiento = listaLinea._1(0)
-            primero = false
-            }
-            else{
-            if(primeroAvion){
-                avionTemp = new Avion
-                avionTemp.nombre_( contador.toString )
-                avionTemp.tiempoAterrizajeReal_( 0 )
-                contador += 1
-                avionTemp.tiempoAparicion_( listaLinea._1(3) )
-                avionTemp.tiempoAterrizajeMasTemprano_( listaLinea._1(2) )
-                avionTemp.tiempoAterrizajeMasOptimo_( listaLinea._1(1) )
-                avionTemp.tiempoAterrizajeMasTarde_( listaLinea._1(0) )
-                avionTemp.costoPorUnidadTiempoAntesOptimo_( listaLinea._2(1) )
-                avionTemp.costoPorUnidadTiempoDespuesOptimo_( listaLinea._2(0) )
-                primeroAvion = false
-                listaNumeros = Nil
-            }
-            else{
-                listaNumeros = concatenar( listaLinea._1, listaNumeros)
-                if(listaNumeros.length == (numeroAviones) ){
-                avionTemp.tiempoDespuesAterrizaje_( listaNumeros )
-                avionTemp.nombreArchivo_(nombre)
-                primeroAvion = true
-                aviones = avionTemp :: aviones
+            if(contadorAviones < numeroAviones){
+                listaLinea = tomarNumeros(e)
+                if(primero){
+                numeroAviones = listaLinea._1(1)
+                tiempoCongelamiento = listaLinea._1(0)
+                primero = false
                 }
-            }
+                else{
+                if(primeroAvion){
+                    avionTemp = new Avion
+                    avionTemp.nombre_( contador.toString )
+                    avionTemp.tiempoAterrizajeReal_( 0 )
+                    contador += 1
+                    avionTemp.tiempoAparicion_( listaLinea._1(3) )
+                    avionTemp.tiempoAterrizajeMasTemprano_( listaLinea._1(2) )
+                    avionTemp.tiempoAterrizajeMasOptimo_( listaLinea._1(1) )
+                    avionTemp.tiempoAterrizajeMasTarde_( listaLinea._1(0) )
+                    avionTemp.costoPorUnidadTiempoAntesOptimo_( listaLinea._2(1) )
+                    avionTemp.costoPorUnidadTiempoDespuesOptimo_( listaLinea._2(0) )
+                    primeroAvion = false
+                    listaNumeros = Nil
+                }
+                else{
+                    listaNumeros = concatenar( listaLinea._1, listaNumeros)
+                    if(listaNumeros.length == (numeroAviones) ){
+                    avionTemp.tiempoDespuesAterrizaje_( listaNumeros )
+                    avionTemp.nombreArchivo_(nombre)
+                    primeroAvion = true
+                    aviones = avionTemp :: aviones
+                    contadorAviones += 1
+                    }
+                }
+                }
             }
         }
         (numeroAviones, aviones, tiempoCongelamiento)

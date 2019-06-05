@@ -37,15 +37,15 @@ class HomeController @Inject()(components: MessagesControllerComponents)
   def inicio() = Action {  
     Ok(views.html.inicio())
   }
-/*
-  def javascriptRoutesAvion = Action { implicit request =>
+
+  /*def javascriptRoutesAvion = Action { implicit request =>
     Ok(
       JavaScriptReverseRouter("jsRoutes")(
         routes.javascript.HomeController.detalleUsuario
       )
     ).as(MimeTypes.JAVASCRIPT)
-  }
-*/
+  }*/
+
   def javascriptRoutes = Action { implicit request =>
     Ok(
       JavaScriptReverseRouter("jsRoutes")(

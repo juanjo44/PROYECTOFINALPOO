@@ -31,10 +31,11 @@ function detalle(idUsuario)
     });
 }
 
-function avion(archivoAvion)
+function avion(archivoAvion, avion)
 {
     //archivoAvion="archivosAvion/"+archivoAvion
     var path = jsRoutes.controllers.HomeController.mostrarCaso(archivoAvion)
+    //var path2 = jsRoutes.controllers.HomeController.detalleUsuario(avion)
 
     $.ajax({
         url: path.url,
@@ -46,4 +47,17 @@ function avion(archivoAvion)
             alert("Error")
         }
     });
+/*
+    $.ajax({
+        url:path2.url,
+        type: 'GET',
+        success: function(result){
+            detalleUsuario.innetHTML = result
+        },
+        error: function(){
+            alert("Error")
+        }
+    });
+*/
+
 }
