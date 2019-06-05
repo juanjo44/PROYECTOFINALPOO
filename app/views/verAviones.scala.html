@@ -1,0 +1,55 @@
+@(listaAviones : scala.collection.immutable.List[Avion])
+@import helper._ 
+@mainApp{
+    <header>
+        <div class="contenedor">
+            <h1 class="icon-beer">Inicio</h1>
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
+            <nav class="menu">
+                <a href="">Inicio</a>
+                <a href="">Ver Info</a>
+            </nav>
+        </div>            
+    </header>
+
+    <main> <br><br><br><br>
+        <div>
+            <br><br>
+            <section id="bienvenidos" class="h2Tabla">
+                <h2 style="font-weight: bold" id="h2T">¡Este es el listado de Aviones del archivo que seleccionaste!</h2>
+                    <section class="pTabla">
+                        <p>Para ver el más información de los Aviones,</p>
+                        <p>haz click sobre cualquiera de los nombres.</p>
+                    </section>
+                <div id="tablaArchivos">
+                    <table>
+                        <tr>
+                            <th>Aviones</th>
+                            <th>Tiempo Real de Aterrizaje</th>
+                        </tr>
+                        <div class="detalleUsuario"></div>
+                        @for(avion <- listaAviones){
+                        <tr>
+                            <th>
+                                <button class="holi "id="myBtn" onclick="detalle(@avion.id)">Avion: @avion.nombre</button>
+                            </th>
+                            <th>@avion.tiempoAterrizajeReal</th>
+                        </tr>
+                    }
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contenedor-servicios">
+            <p class="copy-servicios">Puj Cali &copy; 2019</p>
+            <div class="sociales-servicios">
+                <a class="icon-facebook" href="https://www.facebook.com/"></a>
+                <a class="icon-instagram" href="https://www.instagram.com/nicolas.delgado99/"></a>
+            </div>
+        </div>
+    </footer>
+}

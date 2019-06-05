@@ -1,0 +1,53 @@
+@(listaStrings : scala.collection.immutable.List[String])
+@import helper._ 
+@mainApp{
+    <header>
+        <div class="contenedor">
+            <h1 class="icon-beer">Inicio</h1>
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
+            <nav class="menu">
+                <a href="@routes.HomeController.inicio()">Inicio</a>
+                <a href="@routes.HomeController.verInfo()">Ver Info</a>
+            </nav>
+        </div>            
+    </header>
+
+    <main> <br><br><br><br>
+        <div id="mostrarCaso">
+            <br><br>
+            <section id="bienvenidos" class="h2Tabla">
+                <h2 style="font-weight: bold" id="h2T">¡Estos son los archivos que has subido!</h2>
+                    <section class="pTabla">
+                        <p>Para ver el listado de aviones ordenados de cada uno de los archivos</p>
+                        <p>presione sobre el nombre del archivo subido.</p>
+                    </section>
+                <div id="tablaArchivos">
+                
+                    <table>
+                        <tr>
+                            <th>Archivos subidos</th>
+                        </tr>
+                        @for(archivo <- listaStrings){
+                        <tr>
+                            <th>
+                                <button id="myBtn" onclick="avion('@archivo')">@archivo</button>
+                            </th>
+                        </tr>
+                    }
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contenedor-servicios">
+            <p class="copy-servicios">Puj Cali &copy; 2019</p>
+            <div class="sociales-servicios">
+                <a class="icon-facebook" href="https://www.facebook.com/"></a>
+                <a class="icon-instagram" href="https://www.instagram.com/nicolas.delgado99/"></a>
+            </div>
+        </div>
+    </footer>
+}

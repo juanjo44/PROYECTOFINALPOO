@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenedorLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../images/Fondos.jpg');
+    background-size: cover;
+}
+
+.login{
+    border: 2px solid rgb(239, 240, 248, 0.9);
+    padding: 3em;
+    background: rgb(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+
+.login ul li{
+    padding: 1em;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login ul li#botonSubmit{
+    justify-content: center;
+}
+
+.login ul li input{
+    text-align: center;
+    padding: 0.5em 0em;
+    border: none;
+    border-bottom: 1px solid rgb(131, 127, 127);    
+    border-radius: 5px;
+    transition: all 0.5s;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+.login ul li input:hover{
+ 
+}
+
+.login ul li#botonSubmit input{
+    padding: 1em 5em;
+    border-radius: 1em; 
+    background: rgb(213, 230, 117);
+}
+
+.login ul li#botonSubmit input:hover{
+    cursor: pointer;
+    background-color: aqua;
+}
+.login ul li label{
+    padding-right: 2em;
+    font-size: 1.5em;
+}

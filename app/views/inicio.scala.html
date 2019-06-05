@@ -1,0 +1,57 @@
+@()
+@import helper._ 
+@mainApp{
+    <header>
+        <div class="contenedor">
+            <h1 class="icon-beer">Inicio</h1>
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
+            <nav class="menu">
+                
+                <a href="@routes.HomeController.inicio()">Inicio</a>
+                <a href="@routes.HomeController.verInfo()">Ver Info</a>
+            </nav>
+        </div>            
+    </header>
+
+    <main> <br><br><br><br>
+        <div>
+            <br><br>
+            <section id="bienvenidos">
+                <p style="font-weight: bold">BIENVENIDO AL PORTAL DE SECUENCIACIÓN DEL DECOLAJE</p>
+                <p style="font-weight: bold">DEL AEROPUERTO ALFONSO BONILLA ARAGÓN</p>
+                <div class="subirArchivo">
+                    <p>Para subir un archivo con la información de los aviones próximos a llegar</p>
+                    <p>presiona el siguiente botón</p><br>
+                    <br><br><br>
+                    @helper.form(action = routes.HomeController.upload, 'enctype -> "multipart/form-data") {
+                    <input type="file" name="picture" class="archivo">
+                    <br>
+                    <p>
+                        <input type="submit" class="boton1" value="Cargar">
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    }
+                    @helper.form(action = routes.HomeController.verInfo()) {
+                    <p>
+                        <input type="submit" class="boton1" value="Ver Info">
+                    </p>
+                    }  
+                </div>
+            </section>
+            <section><br></section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contenedor-servicios">
+            <p class="copy-servicios">Puj Cali &copy; 2019</p>
+            <div class="sociales-servicios">
+                <a class="icon-facebook" href="https://www.facebook.com/"></a>
+                <a class="icon-instagram" href="https://www.instagram.com/nicolas.delgado99/"></a>
+            </div>
+        </div>
+    </footer>
+}

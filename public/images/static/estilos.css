@@ -1,0 +1,202 @@
+/* Enlaces de otras hojas de texto o fuentes de Google */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url(menu.css);
+@import url(banner.css);
+@import url(asesoria.css);
+@import url(tipos.css);
+
+
+/* Código para el diseño de toda la página en general */
+
+*{
+    margin: 0;             /* margen */
+    padding: 0;            /* espacios */
+    box-sizing: border-box; /* tamaño de la pagina */
+    
+}
+
+
+/* Código para el diseño del body */
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Código para el diseño del header */
+
+header{
+    width: 100%;           /* ancho del header */
+    height: 50px;          /* altura del header */
+    background: #000;      /* color del header */
+    color: #fff;           /* color de letra del header */
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+h1{
+    float: left;
+}
+
+header .contenedor{
+    display: table;
+}
+
+.contenedor{
+    width: 98%;
+    margin: auto;
+    
+}
+
+section{
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+#bienvenidos{
+    text-align: center;
+}
+
+#bienvenidos address{
+    text-align: center;
+    text-decoration: none;
+}
+
+#bienvenidos address a{
+    text-decoration: none;
+    color: #000;
+}
+
+.copy{
+    font-size: 20px;
+    
+}
+
+footer .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.sociales{
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+}
+
+.sociales a{
+    color: #000;
+    text-decoration: none;
+}
+
+
+@media (min-width:1024px){     /*Código para que sea responsive (que se ajuste a la pantalla) */
+    .contenedor{
+        width: 1000px;
+    }
+}
+
+
+@media (min-width:768px){      /*Código para que sea responsive (que se ajuste a la pantalla) */
+    .sociales{
+        width: auto;
+    }
+    footer .contenedor{
+        justify-content: space-between;
+    }
+}
+
+.contenedor-servicios{
+    width: 98%;
+    margin: auto;
+    
+}
+
+@media (min-width:1024px){   /*Código para que sea responsive (que se ajuste a la pantalla) */
+    .contenedor-servicios{
+        width: 1000px;
+    }
+}
+
+
+@media (min-width:768px){     /*Código para que sea responsive (que se ajuste a la pantalla) */
+    .sociales-servicios{
+        width: auto;
+    }
+    footer .contenedor-servicios{
+        justify-content: space-between;
+    }
+}
+
+
+footer .contenedor-servicios{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background-color: #000;
+}
+
+.sociales-servicios{
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+}
+
+.sociales-servicios a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.copy-servicios{
+    color: #fff;
+    font-size: 20px;
+}
+
+.almacenes h5{
+    text-align: center;
+}
+
+.info-contacto{
+    text-align: center;
+}
+
+.info-contacto a{
+    text-decoration: none;
+    color: #FF0000;
+}
+
+#bienvenidos .boton1{
+    text-decoration: none;
+    color: #FFF;
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+    background-color: #000;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-weight: bold;
+    border: none;
+}
+
+#bienvenidos .conchita{
+    text-decoration: none;
+    flex-wrap: wrap;
+    display: inline-flex;
+    text-align: center;
+    font-size: 18px;
+    background-color: #958b8b;
+    vertical-align: center;
+}
+
+#bienvenidos p a{
+    text-decoration: none;
+    color: #000;
+}

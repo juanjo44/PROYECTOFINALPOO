@@ -1,0 +1,11 @@
+.imageBig{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.imageBig img{
+    width: 1000px;
+}

@@ -1,0 +1,70 @@
+#tipos{
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+}
+
+#tipos .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.tipos-cerveza{
+    margin: 20px;
+}
+
+.tipos-cerveza img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 7px solid #fff;
+    margin: 7px;
+}
+
+@media (min-width:480px){
+    .tipos-cerveza{
+        width: 40%;
+    }
+}
+
+@media (min-width:1024px){
+    .tipos-cerveza{
+        width: auto;
+    }
+}
+
+
+#tipos-servicio .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+.almacenes{
+    margin: 20px;
+}
+
+.almacenes img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 7px solid #000;
+    margin: 7px;
+}
+
+@media (min-width:480px){
+    .almacenes{
+        width: 40%;
+    }
+}
+
+@media (min-width:1024px){
+    .almacenes{
+        width: auto;
+    }
+}
